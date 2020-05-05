@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+
+  <body>
+    <h4>
+      World of Warcraft - Is Ny'alotha Easier Than Eternal Palace?
+    </h4>
+    <p>
+      One week and two days after mythic Ny’alotha opened up Complexity Limit
+      downed N’Zoth and claimed the world first title. Although about a week is
+      the norm for most raids, it is worth noting it took almost two weeks for
+      Azshara to be killed on Mythic last tier (Mythic opened on 7/16 and Method
+      beat her on 7/29). Although it might be tempting to say this means Ny’alotha
+      is a simpler raid than Eternal Palace was, it’s not that straightforward.
+      While difficulty can be debated, I feel like Ny’alotha is overall a more
+      enjoyable raid. So far, I don’t dread doing any of the bosses; in fact, the
+      only thing I dread is that dang run back if we do wipe. Most of the fights are
+      also interesting.  I do, however, wonder about what doing the Skitra fight is
+      like on LFR since communication matters in that particular fight. For the first
+      time this expansion I have a hard time choosing my favorite fight in a
+      raid, not because I dislike so many of them it’s hard to narrow it down,
+      but because I enjoy so many of them. It’s possible I might feel differently
+      on the far side of six months, or likely more since there’s still no Alpha for
+      Shadowlands yet, but for now, I am enjoying this raid the most out of all the raids in BfA.
+    </p>
+    <form action="/view" method="GET">
+      <input type="submit" value="View Activity" />
+    </form>
+    <form action="/reset" method="GET">
+      <input type="submit" value="reset" />
+    </form>
+    <form action="/add" method="POST">
+      Comment ID:
+      <input type="number" name="id" required /><br />
+      Comments:
+      <input type="text" name="text" required /><br />
+      <input type="submit" value="Add Comment" />
+    </form>
+    <form action="/undo" method="POST">
+      <input type="submit" value="undo" />
+    </form>
+    <h4>Comments:</h4>
+    <ul>
+      <% comments.forEach(function(comment) { %>
+      <li><%= comment.id %> - <%= comment.text %></li>
+      <% }); %>
+    </ul>
+    <form action="/delete" method="POST">
+      Delete Specified Comment:<br />
+      Question ID:
+      <input type="text" name="id" />
+      <input type="submit" value="delete" />
+    </form>
+  </body>
+</html>

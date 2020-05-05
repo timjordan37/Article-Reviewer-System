@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+
+  <body>
+    <h4>
+      Create Question
+    </h4>
+    <form action="/create" method="POST">
+      question:<br />
+      <input type="text" name="question" size="50" required /><br />
+      responses: (format is comma separated with 1 space ex: response1, response2)<br />
+      <input
+        rows="4"
+        cols="50"
+        name="responses"
+        pattern="^[0-9a-zA-z_ ]+(, [0-9a-zA-z_ ]+){1,11}$"
+        size="75"
+        required
+      /><br />
+      <input type="submit" value="add" required /><br />
+    </form>
+    <a href="/admin?">admin view</a>
+  </body>
+</html>
